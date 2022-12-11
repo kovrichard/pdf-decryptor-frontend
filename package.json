@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "eslint --resolve-plugins-relative-to . '**/*.ts' --fix && prettier --write '**/*.ts'"
   },
   "private": true,
   "dependencies": {
