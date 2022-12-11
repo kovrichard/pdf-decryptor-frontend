@@ -13,7 +13,7 @@
             <li>Type password</li>
             <li>Decrypt</li>
         </ol>
-        <form method="POST" action="#" enctype="multipart/form-data" class="flex flex-col items-center">
+        <form method="POST" action="{{ backendUrl }}/decrypt" enctype="multipart/form-data" class="flex flex-col items-center">
             <input type="file" class="mb-4 w-4/5 sm:w-96 border border-solid border-[#262626] rounded-2xl" name="file" required>
             <input type="text" class="mb-4 w-4/5 sm:w-96 h-8 text-black border border-solid border-[#262626] text-center rounded-2xl error" name="password" placeholder="PDF password here" required>
             <button type="submit" class="w-36 h-10 sm:h-12 text-lg sm:text-xl rounded-3xl border border-solid border-[#262626] hover:bg-[#222222]">Decrypt</button>
