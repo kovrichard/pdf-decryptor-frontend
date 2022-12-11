@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pdf-decryptor-frontend:
+    build: ./
+    image: pdf-decryptor-frontend 
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_modules/
+    ports:
+      - 4200:4200
+      - 9006:9005
+      - 9876:9876
+    command: ng serve --host 0.0.0.0 --port 4200 --poll=1000 --disable-host-check
