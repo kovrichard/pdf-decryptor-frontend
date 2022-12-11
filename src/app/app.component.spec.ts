@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -14,18 +15,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pdf-decryptor-frontend'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('pdf-decryptor-frontend');
-  });
-
-  it('should render title', () => {
+  it('backendUrl should point to backend', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'pdf-decryptor-frontend app is running!'
+    expect(fixture.componentInstance.backendUrl).toEqual(
+      environment.backendUrl
     );
+  });
+
+  it('year should show current year', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    expect(fixture.componentInstance.year).toEqual(new Date().getFullYear());
   });
 });
