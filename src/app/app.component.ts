@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     formData.append('password', this.form.get('password')?.value);
 
     this.httpClient
-      .post(`${this.backendUrl}/decrypt/`, formData, { responseType: 'text' })
+      .post(`${this.backendUrl}/decrypt/`, formData, { responseType: 'blob' })
       .subscribe((r: any) => {
         const blob = new Blob([r], { type: 'application/pdf' });
         const url = window.URL.createObjectURL(blob);
